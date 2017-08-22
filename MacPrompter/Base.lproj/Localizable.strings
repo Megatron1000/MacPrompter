@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  MacPrompter
+
+  Created by Mark Bridges on 22/08/2017.
+  Copyright © 2017 Mark Bridges. All rights reserved.
+*/
+
+"prompter.rateAppAlert.title" = "Thanks for using %@. It would be a great help if you could write a review in the Mac App Store.";
+"prompter.viewOtherAppsAlert.title" = "Thanks for using %@. If you like this app, maybe you'd like %@.";
+"prompter.alert.dontAskAgain" = "Don't Ask Me Again";
+"prompter.alert.noThanks" = "No Thanks";
+"prompter.alert.rateNow" = "Rate Now";
+"prompter.alert.viewInStore" = "View In App Store";

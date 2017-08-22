@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ABD5CA761F4C21EB00E819A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA751F4C21EB00E819A0 /* AppDelegate.swift */; };
-		ABD5CA781F4C21EB00E819A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA771F4C21EB00E819A0 /* ViewController.swift */; };
-		ABD5CA7A1F4C21EB00E819A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD5CA791F4C21EB00E819A0 /* Assets.xcassets */; };
-		ABD5CA7D1F4C21EB00E819A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD5CA7B1F4C21EB00E819A0 /* Main.storyboard */; };
+		ABD5CA851F4C222500E819A0 /* Prompter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA841F4C222500E819A0 /* Prompter.swift */; };
+		ABD5CA871F4C235A00E819A0 /* EventLoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA861F4C235A00E819A0 /* EventLoggerProtocol.swift */; };
+		ABD5CA891F4C238300E819A0 /* DebugLoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA881F4C238300E819A0 /* DebugLoggerProtocol.swift */; };
+		ABD5CA8B1F4C253500E819A0 /* MutableCollection+Shuffling.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA8A1F4C253500E819A0 /* MutableCollection+Shuffling.swift */; };
+		ABD5CA8E1F4C284B00E819A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABD5CA901F4C284B00E819A0 /* Localizable.strings */; };
+		ABD5CA921F4C2A8700E819A0 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA911F4C2A8700E819A0 /* String+Localize.swift */; };
+		ABD5CA941F4C2CE700E819A0 /* OtherAppPromptInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA931F4C2CE700E819A0 /* OtherAppPromptInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ABD5CA721F4C21EB00E819A0 /* MacPrompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPrompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABD5CA751F4C21EB00E819A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ABD5CA771F4C21EB00E819A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ABD5CA791F4C21EB00E819A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ABD5CA7C1F4C21EB00E819A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABD5CA7E1F4C21EB00E819A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD5CA841F4C222500E819A0 /* Prompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prompter.swift; sourceTree = "<group>"; };
+		ABD5CA861F4C235A00E819A0 /* EventLoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLoggerProtocol.swift; sourceTree = "<group>"; };
+		ABD5CA881F4C238300E819A0 /* DebugLoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLoggerProtocol.swift; sourceTree = "<group>"; };
+		ABD5CA8A1F4C253500E819A0 /* MutableCollection+Shuffling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MutableCollection+Shuffling.swift"; sourceTree = "<group>"; };
+		ABD5CA8F1F4C284B00E819A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABD5CA911F4C2A8700E819A0 /* String+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
+		ABD5CA931F4C2CE700E819A0 /* OtherAppPromptInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherAppPromptInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +58,14 @@
 		ABD5CA741F4C21EB00E819A0 /* MacPrompter */ = {
 			isa = PBXGroup;
 			children = (
-				ABD5CA751F4C21EB00E819A0 /* AppDelegate.swift */,
-				ABD5CA771F4C21EB00E819A0 /* ViewController.swift */,
-				ABD5CA791F4C21EB00E819A0 /* Assets.xcassets */,
-				ABD5CA7B1F4C21EB00E819A0 /* Main.storyboard */,
 				ABD5CA7E1F4C21EB00E819A0 /* Info.plist */,
+				ABD5CA841F4C222500E819A0 /* Prompter.swift */,
+				ABD5CA861F4C235A00E819A0 /* EventLoggerProtocol.swift */,
+				ABD5CA881F4C238300E819A0 /* DebugLoggerProtocol.swift */,
+				ABD5CA8A1F4C253500E819A0 /* MutableCollection+Shuffling.swift */,
+				ABD5CA911F4C2A8700E819A0 /* String+Localize.swift */,
+				ABD5CA931F4C2CE700E819A0 /* OtherAppPromptInfo.swift */,
+				ABD5CA901F4C284B00E819A0 /* Localizable.strings */,
 			);
 			path = MacPrompter;
 			sourceTree = "<group>";
@@ -94,6 +103,7 @@
 					ABD5CA711F4C21EB00E819A0 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = DVPYSYSD2W;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -121,8 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD5CA7A1F4C21EB00E819A0 /* Assets.xcassets in Resources */,
-				ABD5CA7D1F4C21EB00E819A0 /* Main.storyboard in Resources */,
+				ABD5CA8E1F4C284B00E819A0 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,20 +142,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD5CA781F4C21EB00E819A0 /* ViewController.swift in Sources */,
-				ABD5CA761F4C21EB00E819A0 /* AppDelegate.swift in Sources */,
+				ABD5CA891F4C238300E819A0 /* DebugLoggerProtocol.swift in Sources */,
+				ABD5CA921F4C2A8700E819A0 /* String+Localize.swift in Sources */,
+				ABD5CA941F4C2CE700E819A0 /* OtherAppPromptInfo.swift in Sources */,
+				ABD5CA8B1F4C253500E819A0 /* MutableCollection+Shuffling.swift in Sources */,
+				ABD5CA871F4C235A00E819A0 /* EventLoggerProtocol.swift in Sources */,
+				ABD5CA851F4C222500E819A0 /* Prompter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ABD5CA7B1F4C21EB00E819A0 /* Main.storyboard */ = {
+		ABD5CA901F4C284B00E819A0 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				ABD5CA7C1F4C21EB00E819A0 /* Base */,
+				ABD5CA8F1F4C284B00E819A0 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -248,12 +261,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DVPYSYSD2W;
 				INFOPLIST_FILE = MacPrompter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bridgetech.MacPrompter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -262,6 +277,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DVPYSYSD2W;
 				INFOPLIST_FILE = MacPrompter/Info.plist;
