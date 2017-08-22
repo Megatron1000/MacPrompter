@@ -74,7 +74,7 @@ public class Prompter {
 
     // MARK: Initialiser
     
-    init(eventLogger: EventTrackingLogger.Type? = nil, debugLogger: DebugLogger.Type? = nil) throws {
+   public init(eventLogger: EventTrackingLogger.Type? = nil, debugLogger: DebugLogger.Type? = nil) throws {
         
         guard
             let url: URL = Bundle.main.url(forResource: self.ConfigFileName, withExtension: "plist"),
