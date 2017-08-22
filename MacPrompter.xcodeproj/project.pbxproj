@@ -164,7 +164,7 @@
 				ABD5CA8F1F4C284B00E819A0 /* Base */,
 			);
 			name = Localizable.strings;
-			path = Classes;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
