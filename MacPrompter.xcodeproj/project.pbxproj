@@ -18,16 +18,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB85F0F01F4C62270017A27F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AB85F0F01F4C62270017A27F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = Classes/main.swift; sourceTree = "<group>"; };
 		ABD5CA721F4C21EB00E819A0 /* MacPrompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPrompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD5CA7E1F4C21EB00E819A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABD5CA841F4C222500E819A0 /* Prompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prompter.swift; sourceTree = "<group>"; };
-		ABD5CA861F4C235A00E819A0 /* EventLoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLoggerProtocol.swift; sourceTree = "<group>"; };
-		ABD5CA881F4C238300E819A0 /* DebugLoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLoggerProtocol.swift; sourceTree = "<group>"; };
-		ABD5CA8A1F4C253500E819A0 /* MutableCollection+Shuffling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MutableCollection+Shuffling.swift"; sourceTree = "<group>"; };
+		ABD5CA841F4C222500E819A0 /* Prompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Prompter.swift; path = Classes/Prompter.swift; sourceTree = "<group>"; };
+		ABD5CA861F4C235A00E819A0 /* EventLoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventLoggerProtocol.swift; path = Classes/EventLoggerProtocol.swift; sourceTree = "<group>"; };
+		ABD5CA881F4C238300E819A0 /* DebugLoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebugLoggerProtocol.swift; path = Classes/DebugLoggerProtocol.swift; sourceTree = "<group>"; };
+		ABD5CA8A1F4C253500E819A0 /* MutableCollection+Shuffling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableCollection+Shuffling.swift"; path = "Classes/MutableCollection+Shuffling.swift"; sourceTree = "<group>"; };
 		ABD5CA8F1F4C284B00E819A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		ABD5CA911F4C2A8700E819A0 /* String+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
-		ABD5CA931F4C2CE700E819A0 /* OtherAppPromptInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherAppPromptInfo.swift; sourceTree = "<group>"; };
+		ABD5CA911F4C2A8700E819A0 /* String+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localize.swift"; path = "Classes/String+Localize.swift"; sourceTree = "<group>"; };
+		ABD5CA931F4C2CE700E819A0 /* OtherAppPromptInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OtherAppPromptInfo.swift; path = Classes/OtherAppPromptInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +164,7 @@
 				ABD5CA8F1F4C284B00E819A0 /* Base */,
 			);
 			name = Localizable.strings;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
