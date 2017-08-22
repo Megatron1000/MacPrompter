@@ -8,7 +8,7 @@
 
 import AppKit
 
-struct OtherAppPromptInfo {
+public struct OtherAppPromptInfo {
     
     private let OtherAppNameKey: String = "otherAppName"
     private let OtherAppURLKey: String = "otherAppURL"

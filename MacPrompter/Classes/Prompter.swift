@@ -21,18 +21,18 @@
 import AppKit
 import Foundation
 
-class Prompter {
+public class Prompter {
     
-    struct PromptResult {
+    public struct PromptResult {
         
-        enum PromptType {
+        public enum PromptType {
             case rate
             case viewOtherApp(otherApp: OtherAppPromptInfo)
         }
         
-        let promptType: PromptType
-        let wasSelected: Bool
-        let isPromptsToBeSuppressedInFuture: Bool
+        public let promptType: PromptType
+        public let wasSelected: Bool
+        public let isPromptsToBeSuppressedInFuture: Bool
     }
     
     // MARK: Enum
