@@ -16,7 +16,7 @@ s.source            = {
 :tag => "0.0.1"
 }
 s.platform     = :osx, '10.10'
-s.source_files = 'MacPrompter/Classes/**/*'
+s.source_files = 'MacPrompter/Classes/**/*.{swift, strings}'
 s.requires_arc = true
 s.social_media_url = "https://twitter.com/markbridgesapps"
 
