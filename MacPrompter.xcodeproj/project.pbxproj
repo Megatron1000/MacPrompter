@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB85F0F11F4C62270017A27F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB85F0F01F4C62270017A27F /* main.swift */; };
 		ABD5CA851F4C222500E819A0 /* Prompter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA841F4C222500E819A0 /* Prompter.swift */; };
 		ABD5CA871F4C235A00E819A0 /* EventLoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA861F4C235A00E819A0 /* EventLoggerProtocol.swift */; };
 		ABD5CA891F4C238300E819A0 /* DebugLoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD5CA881F4C238300E819A0 /* DebugLoggerProtocol.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB85F0F01F4C62270017A27F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ABD5CA721F4C21EB00E819A0 /* MacPrompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPrompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD5CA7E1F4C21EB00E819A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD5CA841F4C222500E819A0 /* Prompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prompter.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				ABD5CA7E1F4C21EB00E819A0 /* Info.plist */,
 				ABD5CA841F4C222500E819A0 /* Prompter.swift */,
+				AB85F0F01F4C62270017A27F /* main.swift */,
 				ABD5CA861F4C235A00E819A0 /* EventLoggerProtocol.swift */,
 				ABD5CA881F4C238300E819A0 /* DebugLoggerProtocol.swift */,
 				ABD5CA8A1F4C253500E819A0 /* MutableCollection+Shuffling.swift */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD5CA891F4C238300E819A0 /* DebugLoggerProtocol.swift in Sources */,
+				AB85F0F11F4C62270017A27F /* main.swift in Sources */,
 				ABD5CA921F4C2A8700E819A0 /* String+Localize.swift in Sources */,
 				ABD5CA941F4C2CE700E819A0 /* OtherAppPromptInfo.swift in Sources */,
 				ABD5CA8B1F4C253500E819A0 /* MutableCollection+Shuffling.swift in Sources */,
@@ -307,6 +311,7 @@
 				ABD5CA831F4C21EB00E819A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

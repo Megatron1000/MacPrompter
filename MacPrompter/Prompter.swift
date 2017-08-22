@@ -21,7 +21,6 @@
 import AppKit
 import Foundation
 
-
 class Prompter {
     
     struct PromptResult {

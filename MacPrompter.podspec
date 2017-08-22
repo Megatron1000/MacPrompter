@@ -15,7 +15,7 @@ s.source            = {
 :git => 'https://github.com/Megatron1000/MacPrompter.git',
 :tag => "0.0.1"
 }
-s.platform     = :osx, '10.8'
+s.platform     = :osx, '10.10'
 s.source_files = 'MacPrompter/**/*'
 s.requires_arc = true
 s.social_media_url = "https://twitter.com/markbridgesapps"
