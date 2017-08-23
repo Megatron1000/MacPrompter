@@ -19,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		AB85F0F01F4C62270017A27F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = Classes/main.swift; sourceTree = "<group>"; };
+		AB85F0F81F4D85790017A27F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ABD5CA721F4C21EB00E819A0 /* MacPrompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPrompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD5CA7E1F4C21EB00E819A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD5CA841F4C222500E819A0 /* Prompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Prompter.swift; path = Classes/Prompter.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				ABD5CA8F1F4C284B00E819A0 /* Base */,
+				AB85F0F81F4D85790017A27F /* en */,
 			);
 			name = Localizable.strings;
 			path = Resources;

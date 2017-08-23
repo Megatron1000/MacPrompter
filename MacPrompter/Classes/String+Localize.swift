@@ -12,8 +12,12 @@ extension String {
     
     var localized: String {
         
-        let bundle = Bundle(for: Prompter.self)
+        let frameworkBundle = Bundle(for: Prompter.self)
         
-        return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("MacPrompter.bundle")
+        
+        let resourceBundle = Bundle(url: bundleURL!)!
+        
+        return NSLocalizedString(self, tableName: nil, bundle: resourceBundle, value: "", comment: "")
     }
 }
