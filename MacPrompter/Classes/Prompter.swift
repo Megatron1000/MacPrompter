@@ -95,7 +95,7 @@ public class Prompter {
     
     // MARK: Functions
 
-    public func runWithCompletion(completion: ((PromptResult) -> Void)? = nil) {
+    public func run(withCompletion completion: ((PromptResult) -> Void)? = nil) {
         
         runCount = runCount + 1
         
