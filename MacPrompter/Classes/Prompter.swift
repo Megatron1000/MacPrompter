@@ -58,7 +58,7 @@ public class Prompter {
     // MARK: Private Properties
 
     private let persistantData = UserDefaults.standard
-    private let appName: String = NSRunningApplication.current().localizedName ?? ""
+    private let appName: String = NSRunningApplication.current.localizedName ?? ""
     private let otherAppPromptInfos: [OtherAppPromptInfo]
     private let appURL: URL
     private let rateAppPromptInterval: Int
@@ -133,11 +133,11 @@ public class Prompter {
         alert.suppressionButton?.title = "prompter.alert.dontAskAgain".localized
         alert.addButton(withTitle: "prompter.alert.rateNow".localized)
         alert.addButton(withTitle: "prompter.alert.noThanks".localized)
-        alert.window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
+        alert.window.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
         
-        let result: Int = alert.runModal()
+        let result: NSApplication.ModalResponse = alert.runModal()
         
-        let alertWasSuppressed = alert.suppressionButton?.state == NSOnState
+        let alertWasSuppressed = alert.suppressionButton?.state == .on
 
         if alertWasSuppressed {
             persistantData.set(true, forKey: StopRateKey)
@@ -146,9 +146,9 @@ public class Prompter {
         }
         
         switch result {
-        case NSAlertFirstButtonReturn:
+        case .alertFirstButtonReturn:
             debugLogger?.log("Will Rate")
-            NSWorkspace.shared().open(appURL)
+            NSWorkspace.shared.open(appURL)
             persistantData.set(true, forKey: StopRateKey)
             eventLogger?.logEvent("rate_app_selected")
             completion?(PromptResult(promptType: .rate, wasSelected: true, isPromptsToBeSuppressedInFuture: alertWasSuppressed))
@@ -171,11 +171,11 @@ public class Prompter {
         alert.addButton(withTitle: "prompter.alert.viewInStore".localized)
         alert.addButton(withTitle: "prompter.alert.noThanks".localized)
         alert.icon = otherAppPromptInfo.image
-        alert.window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
+        alert.window.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
         
-        let result: Int = alert.runModal()
+        let result: NSApplication.ModalResponse = alert.runModal()
         
-        let alertWasSuppressed = alert.suppressionButton?.state == NSOnState
+        let alertWasSuppressed = alert.suppressionButton?.state == .on
         
         if alertWasSuppressed {
             persistantData.set(true, forKey: otherAppPromptInfo.stopKey)
@@ -184,9 +184,9 @@ public class Prompter {
         }
 
         switch result {
-        case NSAlertFirstButtonReturn:
+        case .alertFirstButtonReturn:
             debugLogger?.log("Will Rate")
-            NSWorkspace.shared().open(otherAppPromptInfo.url)
+            NSWorkspace.shared.open(otherAppPromptInfo.url)
             persistantData.set(true, forKey: otherAppPromptInfo.stopKey)
             eventLogger?.logEvent("view_other_app_selected", parameters: ["app_name" : otherAppPromptInfo.name])
             completion?(PromptResult(promptType: .viewOtherApp(otherApp: otherAppPromptInfo),

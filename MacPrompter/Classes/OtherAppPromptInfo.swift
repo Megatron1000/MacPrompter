@@ -29,7 +29,7 @@ public struct OtherAppPromptInfo {
             let urlString = dictionary[OtherAppURLKey] as? String,
             let url = URL(string: urlString),
             let imageName = dictionary[OtherAppImageKey] as? String,
-            let image = NSImage(named: imageName),
+            let image = NSImage(named: NSImage.Name(rawValue: imageName)),
             let promptInterval = dictionary[OtherAppPromptIntervalKey] as? Int else {
                 throw Prompter.PrompterError.unableToParsePlist
         }
