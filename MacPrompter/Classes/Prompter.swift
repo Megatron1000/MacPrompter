@@ -107,18 +107,19 @@ public class Prompter {
                                             self?.showRateAppPromptWithCompletion(completion: completion)
             })
         }
-        
-        let shuffledOtherAppPromptInfos = otherAppPromptInfos.shuffled()
-        shuffledOtherAppPromptInfos.forEach { otherAppPromptInfo in
-            
-            if otherAppPromptInfo.promptInterval > 0 {
-                if !persistantData.bool(forKey: otherAppPromptInfo.stopKey) && ((runCount % otherAppPromptInfo.promptInterval) == 0) {
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + delay,
-                                                  execute: { [weak self] in
-                                                    self?.showOtherAppPrompt(for: otherAppPromptInfo, withCompletion: completion)
-                    })
-                    return
+        else {
+            let shuffledOtherAppPromptInfos = otherAppPromptInfos.shuffled()
+            for otherAppPromptInfo in shuffledOtherAppPromptInfos {
+                
+                if otherAppPromptInfo.promptInterval > 0 {
+                    if !persistantData.bool(forKey: otherAppPromptInfo.stopKey) && ((runCount % otherAppPromptInfo.promptInterval) == 0) {
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + delay,
+                                                      execute: { [weak self] in
+                                                        self?.showOtherAppPrompt(for: otherAppPromptInfo, withCompletion: completion)
+                        })
+                        break
+                    }
                 }
             }
         }
