@@ -20,6 +20,7 @@
 
 import AppKit
 import Foundation
+import StoreKit
 
 public class Prompter {
     
@@ -56,7 +57,7 @@ public class Prompter {
     let debugLogger: DebugLogger.Type?
     
     // MARK: Private Properties
-
+    
     private let persistantData = UserDefaults.standard
     private let appName: String = NSRunningApplication.current.localizedName ?? ""
     private let otherAppPromptInfos: [OtherAppPromptInfo]
@@ -71,10 +72,10 @@ public class Prompter {
             persistantData.set(newValue, forKey: RunCountKey)
         }
     }
-
+    
     // MARK: Initialiser
     
-   public init(eventLogger: EventTrackingLogger.Type? = nil, debugLogger: DebugLogger.Type? = nil) throws {
+    public init(eventLogger: EventTrackingLogger.Type? = nil, debugLogger: DebugLogger.Type? = nil) throws {
         
         guard
             let url: URL = Bundle.main.url(forResource: self.ConfigFileName, withExtension: "plist"),
@@ -94,7 +95,7 @@ public class Prompter {
     }
     
     // MARK: Functions
-
+    
     public func run(withCompletion completion: ((PromptResult) -> Void)? = nil) {
         
         runCount = runCount + 1
@@ -126,37 +127,41 @@ public class Prompter {
     }
     
     private func showRateAppPromptWithCompletion(completion: ((PromptResult) -> Void)?) {
-        let alert = NSAlert()
-        alert.messageText = appName
-        alert.informativeText = String(format: "prompter.rateAppAlert.title".localized, appName)
-        alert.showsSuppressionButton = true
-        alert.suppressionButton?.title = "prompter.alert.dontAskAgain".localized
-        alert.addButton(withTitle: "prompter.alert.rateNow".localized)
-        alert.addButton(withTitle: "prompter.alert.noThanks".localized)
-        alert.window.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
         
-        let result: NSApplication.ModalResponse = alert.runModal()
-        
-        let alertWasSuppressed = alert.suppressionButton?.state == .on
-
-        if alertWasSuppressed {
-            persistantData.set(true, forKey: StopRateKey)
-            debugLogger?.log("Suppressed")
-            eventLogger?.logEvent("rate_app_suppressed")
-        }
-        
-        switch result {
-        case .alertFirstButtonReturn:
-            debugLogger?.log("Will Rate")
-            NSWorkspace.shared.open(appURL)
-            persistantData.set(true, forKey: StopRateKey)
-            eventLogger?.logEvent("rate_app_selected")
-            completion?(PromptResult(promptType: .rate, wasSelected: true, isPromptsToBeSuppressedInFuture: alertWasSuppressed))
+        if #available(OSX 10.14, *) {
+            SKStoreReviewController.requestReview()
+        } else {
+            let alert = NSAlert()
+            alert.messageText = appName
+            alert.informativeText = String(format: "prompter.rateAppAlert.title".localized, appName)
+            alert.showsSuppressionButton = true
+            alert.suppressionButton?.title = "prompter.alert.dontAskAgain".localized
+            alert.addButton(withTitle: "prompter.alert.rateNow".localized)
+            alert.addButton(withTitle: "prompter.alert.noThanks".localized)
+            alert.window.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
             
-        default:
-            eventLogger?.logEvent("rate_app_dismissed")
-            completion?(PromptResult(promptType: .rate, wasSelected: false, isPromptsToBeSuppressedInFuture: alertWasSuppressed))
+            let result: NSApplication.ModalResponse = alert.runModal()
             
+            let alertWasSuppressed = alert.suppressionButton?.state == .on
+            
+            if alertWasSuppressed {
+                persistantData.set(true, forKey: StopRateKey)
+                debugLogger?.log("Suppressed")
+                eventLogger?.logEvent("rate_app_suppressed")
+            }
+            
+            switch result {
+            case .alertFirstButtonReturn:
+                debugLogger?.log("Will Rate")
+                NSWorkspace.shared.open(appURL)
+                persistantData.set(true, forKey: StopRateKey)
+                eventLogger?.logEvent("rate_app_selected")
+                completion?(PromptResult(promptType: .rate, wasSelected: true, isPromptsToBeSuppressedInFuture: alertWasSuppressed))
+                
+            default:
+                eventLogger?.logEvent("rate_app_dismissed")
+                completion?(PromptResult(promptType: .rate, wasSelected: false, isPromptsToBeSuppressedInFuture: alertWasSuppressed))
+            }
         }
         
     }
@@ -182,7 +187,7 @@ public class Prompter {
             debugLogger?.log("Suppressed")
             eventLogger?.logEvent("view_other_app_suppressed", parameters: ["app_name" : otherAppPromptInfo.name])
         }
-
+        
         switch result {
         case .alertFirstButtonReturn:
             debugLogger?.log("Will Rate")
